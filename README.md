@@ -1,4 +1,7 @@
 #Steps:
+Enable  ssl apache mod
+sudo a2enmod ssl
+
 Copy conf file to a destination (example):
 mkdir /etc/apache2/ssl
 cp cert.conf /etc/apache2/ssl
