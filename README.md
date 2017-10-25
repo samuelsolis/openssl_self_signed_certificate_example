@@ -1,25 +1,24 @@
 #Steps:
 Enable  ssl apache mod
-sudo a2enmod ssl
+`sudo a2enmod ssl`
 
 Copy conf file to a destination (example):
-mkdir /etc/apache2/ssl
-cp cert.conf /etc/apache2/ssl
+`mkdir /etc/apache2/ssl`
+`cp cert.conf /etc/apache2/ssl`
 
 Create cert using ssl:
-
-sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt -config /etc/apache2/ssl/cert.conf
+`sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt -config /etc/apache2/ssl/cert.conf`
 
 And follow the steps.
 
 Create a new vhost (or edit an existing):
-cp default-ssl.conf /etc/apache2/site-availables
+`cp default-ssl.conf /etc/apache2/site-availables`
 
 And enable it:
-sudo a2ensite default-ssl.conf
+`sudo a2ensite default-ssl.conf`
 
 Restart apache:
-sudo service apache2 restart
+`sudo service apache2 restart`
 
 Now, you can enter to the site (anysite.local) and add a cert exception following this steps:
 
